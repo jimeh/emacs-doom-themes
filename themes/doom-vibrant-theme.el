@@ -28,6 +28,11 @@ determine the exact padding."
   :group 'doom-vibrant-theme
   :type '(or integer boolean))
 
+(defcustom doom-vibrant-variables-alt nil
+  "If non-nil, variables will be highlighted in with a blue color
+instead of white."
+  :group 'doom-vibrant-theme
+  :type 'boolean)
 
 ;;
 (def-doom-theme doom-vibrant
@@ -75,7 +80,7 @@ determine the exact padding."
    (operators      magenta)
    (type           yellow)
    (strings        green)
-   (variables      base8)
+   (variables      (if doom-vibrant-variables-alt (doom-lighten blue 0.25) base8))
    (numbers        orange)
    (region         "#3d4451")
    (error          red)
